@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <style type="text/css">
+        * {
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+          box-sizing: border-box;
+        }
+
+        body {
+          margin: 0;
+          font-size: 14px;
+        }
+
+        .centered {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+
+        #call-button {
+          padding: 1rem 2rem;
+          border: none;
+          border-radius: 3px;
+          cursor: pointer;
+          color: white;
+          background-color: black;
+          box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        #video-container {
+          width: 50vw;
+          min-width: 300px;
+        }
+
+        #videos {
+          position: relative;
+        }
+
+        video {
+          background-color: black;
+          border-radius: 3px;
+          box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        #remote-video {
+          width: 100%;
+        }
+
+        #local-video {
+          position: absolute;
+          height: 40%;
+          bottom: -30px;
+          right: -30px;
+        }
+      </style>
+  </head>
+  <body>
+    <button id="call-button" class="centered">Call someone</button>
+
+    <div id="video-container" class="centered">
+      <div id="videos">
+        <video id="remote-video" autoplay="autoplay"></video>
+        <video id="local-video" autoplay="autoplay"></video>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="web.js"></script>
+  </body>
+</html>
