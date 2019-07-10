@@ -35,12 +35,6 @@ function showVideoCall() {
   showElement(videoContainer);
 }
 
-/** @type {HTMLVideoElement} */
-const remoteVideo = document.getElementById("remote-video");
-
-/** @type {HTMLVideoElement} */
-const localVideo = document.getElementById("local-video");
-
 /** @type {string} */
 let otherPerson;
 
@@ -144,6 +138,8 @@ webrtc.addEventListener("icecandidate", (event) => {
 });
 
 webrtc.addEventListener("track", (event) => {
+  /** @type {HTMLVideoElement} */
+  const remoteVideo = document.getElementById("remote-video");
   remoteVideo.srcObject = event.streams[0];
 });
 
@@ -151,6 +147,8 @@ navigator
   .mediaDevices
   .getUserMedia({ video: true })
   .then((localStream) => {
+    /** @type {HTMLVideoElement} */
+    const localVideo = document.getElementById("local-video");
     localVideo.srcObject = localStream;
 
     for (const track of localStream.getTracks()) {
