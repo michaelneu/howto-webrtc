@@ -145,7 +145,7 @@ webrtc.addEventListener("track", (event) => {
 
 navigator
   .mediaDevices
-  .getUserMedia({ video: true })
+  .getUserMedia({ video: true, audio:true })
   .then((localStream) => {
     /** @type {HTMLVideoElement} */
     const localVideo = document.getElementById("local-video");
